@@ -1,0 +1,4 @@
+# shared library
+set(LIBRARY_NAME foo)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} FOO_SOURCES)
+add_library(${LIBRARY_NAME} SHARED ${FOO_SOURCES})

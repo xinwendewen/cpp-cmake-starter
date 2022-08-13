@@ -12,13 +12,6 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/
 )
 
-set(APP_SOURCES src/main.cpp)
-set(LIB_SOURCES src/foo/foo.cpp)
+add_subdirectory("src")
 
-add_executable(executable ${APP_SOURCES})
-
-# shared library
-set(LIBRARY_NAME foo)
-add_library(${LIBRARY_NAME} SHARED ${LIB_SOURCES})
-target_link_libraries(executable ${LIBRARY_NAME})
 
