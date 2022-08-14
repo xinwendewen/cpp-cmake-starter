@@ -7,3 +7,7 @@ void greeting() {
     std::cout << "hello world" << std::endl;
     std::cout << "hello world" << std::endl;
 }
+
+int bar() {
+    return 5;
+}
