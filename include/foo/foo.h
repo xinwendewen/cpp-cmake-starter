@@ -1,5 +1,21 @@
-#ifndef FOO_FOO_H_
-#define FOO_FOO_H_
+#ifndef FOO_H
+#define FOO_H
+#include <cstdint>
+namespace foo {
+class Foo {
+public:
+    Foo() noexcept = default;
+    Foo(const Foo& other) = delete;
+    Foo(Foo&& other) = delete;
+    Foo& operator=(const Foo& other) & = delete;
+    Foo& operator=(Foo&& other) & = delete;
+    ~Foo() noexcept = default;
+    int32_t FunctionName() const noexcept;
+private:
+};
 void greeting();
 int bar();
-#endif // FOO_FOO_H_
+} // namespace foo
+#endif // FOO_H
+
+
