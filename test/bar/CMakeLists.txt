@@ -1,8 +1,8 @@
-set(TEST_BIN foo_test)
+set(TEST_BIN bar_test)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/out/test/foo/bin")
-set(TEST_CONF_DIR "${CMAKE_BINARY_DIR}/out/test/foo/conf")
-set(TEST_DEP_DIR "${CMAKE_BINARY_DIR}/out/test/foo/dep")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/out/test/bar/bin")
+set(TEST_CONF_DIR "${CMAKE_BINARY_DIR}/out/test/bar/conf")
+set(TEST_DEP_DIR "${CMAKE_BINARY_DIR}/out/test/bar/dep")
 
 file(MAKE_DIRECTORY ${TEST_CONF_DIR})
 file(MAKE_DIRECTORY ${TEST_DEP_DIR})
@@ -21,5 +21,5 @@ target_link_libraries(${TEST_BIN}
 
 # copy test conf when build
 add_custom_target(copy_${TEST_BIN}_conf ALL
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/foo_test.conf ${TEST_CONF_DIR} # copy single conf file
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/conf/ ${TEST_CONF_DIR} # copy conf dir
 )
